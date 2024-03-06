@@ -1,0 +1,42 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /demo
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.20.249:3306/runhood_power_app?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 3
+      maximum-pool-size: 10
+      max-lifetime: 30000   #不能小于30秒，否则默认回到1800秒
+      connection-test-query: SELECT 1
+
+#mybatis-puls
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  mapper-locations: classpath:/com/*/*.xml
+
+tdEngine:
+  #tdEngine服务
+  url: jdbc:TAOS-RS://60.204.149.15:6041
+  driverClassName: com.taosdata.jdbc.rs.RestfulDriver
+  username: root
+  password: taosdata
+  database: runhood_power_app
+  superTable: power_data
+
+logging:
+  level:
+    com:
+      taosdata:
+        example:
+          springboot:
+            tdengine:
+              demo: debug
