@@ -1,4 +1,4 @@
-package com.demo.dao;
+package com.demo.dao.tdengine;
 
 import com.demo.domain.Weather;
 import org.apache.ibatis.annotations.Param;

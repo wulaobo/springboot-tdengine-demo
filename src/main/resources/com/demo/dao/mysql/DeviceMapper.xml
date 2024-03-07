@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.mysql.DeviceMapper">
+
+    <update id="unbind">
+        update app_device set user_id = null where device_id = #{deviceId}
+    </update>
+
+    <update id="updateDeviceStatus">
+        update app_device set status = #{status} where device_number = #{deviceNumber}
+    </update>
+
+</mapper>

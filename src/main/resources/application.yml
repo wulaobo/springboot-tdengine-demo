@@ -21,22 +21,22 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     auto-mapping-behavior: full
     log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
-  mapper-locations: classpath:/com/*/*.xml
+  mapper-locations: classpath:/com/demo/dao/mysql/*.xml
 
-tdEngine:
-  #tdEngine服务
+tdengine:
+#  #tdEngine服务
   url: jdbc:TAOS-RS://60.204.149.15:6041
   driverClassName: com.taosdata.jdbc.rs.RestfulDriver
   username: root
   password: taosdata
   database: runhood_power_app
   superTable: power_data
+  minIdle: 3
+  maxPoolSize: 10
+  maxLifetime: 30000   #不能小于30秒，否则默认回到1800秒
+  connectionTestQuery: select server_status()
 
 logging:
   level:
     com:
-      taosdata:
-        example:
-          springboot:
-            tdengine:
-              demo: debug
+      demo: debug

@@ -21,6 +21,8 @@
         <lombok.version>1.18.22</lombok.version>
         <mybatis-plus.version>3.5.1</mybatis-plus.version>
         <mybatis-plus-generator>3.5.1</mybatis-plus-generator>
+        <knife4j.version>4.0.0</knife4j.version>
+
     </properties>
 
     <dependencies>
@@ -33,11 +35,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.mybatis.spring.boot</groupId>-->
-<!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
-<!--            <version>2.1.1</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.1</version>
+        </dependency>
 
         <!--lombok-->
         <dependency>
@@ -46,18 +48,18 @@
             <version>${lombok.version}</version>
             <optional>true</optional>
         </dependency>
-        <!-- mybatis-plus-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
-        </dependency>
-        <!--mybatis-plus代码生成器-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-generator</artifactId>
-            <version>${mybatis-plus-generator}</version>
-        </dependency>
+<!--        &lt;!&ndash; mybatis-plus&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-boot-starter</artifactId>-->
+<!--            <version>${mybatis-plus.version}</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;mybatis-plus代码生成器&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-generator</artifactId>-->
+<!--            <version>${mybatis-plus-generator}</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.taosdata.jdbc</groupId>
@@ -72,7 +74,12 @@
             <version>${mysql.version}</version>
         </dependency>
 
-
+        <!--swagger-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
+        </dependency>
 
 <!--        <dependency>-->
 <!--            <groupId>com.alibaba</groupId>-->

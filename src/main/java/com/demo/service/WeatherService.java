@@ -1,7 +1,7 @@
 package com.demo.service;
 
 import com.demo.domain.Weather;
-import com.demo.dao.WeatherMapper;
+import com.demo.dao.tdengine.WeatherMapper;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
